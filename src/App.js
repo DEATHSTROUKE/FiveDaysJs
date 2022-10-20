@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Day1 from "./pages/Day1";
+import {Link, Routes, Route, Navigate} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div className="wrapper">
+            <header>
+                <Link to='/day1'>Day 1 | Cards</Link>
+                <Link to='/day2'>Day 2</Link>
+                <Link to='/day3'>Day 3</Link>
+                <Link to='/day4'>Day 4</Link>
+                <Link to='/day5'>Day 5</Link>
+            </header>
+            <main className="main">
+                <Routes>
+                    <Route path='/' element={<Navigate to='/day1'/>}/>
+                    <Route path='/day1' element={<Day1/>}/>
+                </Routes>
+            </main>
+        </div>
+    );
 }
 
 export default App;

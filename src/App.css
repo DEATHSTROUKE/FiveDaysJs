@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+body {
+  font-weight: 300;
+  font-family: 'GothamPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
+.wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+
+/*HEADER*/
+
+header {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+a {
   color: white;
+  text-decoration: none;
+  transition: all .2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+a:hover {
+  color: #ff713f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*MAIN*/
+
+.main {
+  height: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/*DAY 1*/
+
+.day1-wrapper {
+  background: #ffbaa1;
+  height: 100%;
+  flex: 1 1 auto;
+  padding: 30px 0 0 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  height: 70vh;
+  border-radius: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: #fff;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all .5s ease;
+}
+
+.slide h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  opacity: 0;
+  font-size: 24px;
+}
+
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.4s;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 40px;
+  color: white;
 }
